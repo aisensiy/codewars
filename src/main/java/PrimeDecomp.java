@@ -7,11 +7,15 @@ public class PrimeDecomp {
         if (n <= 2) {
             list.add(n);
         } else {
-            while (n > 2 && n % 2 == 0) {
-                list.add(2);
-                n = n / 2;
+            for (int i = 2; i < n; i++) {
+                while (n > 2 && n % i == 0) {
+                    list.add(i);
+                    n = n / i;
+                }
             }
-            list.add(n);
+            if (n > 1) {
+                list.add(n);
+            }
         }
         return list;
     }
