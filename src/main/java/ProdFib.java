@@ -1,8 +1,15 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class ProdFib {
     public static long[] productFib(int n) {
-        if (n == 1) {
-            return new long[]{1, 1, 1};
+        long first = 0L;
+        long second = 1L;
+        while (first < n / second) {
+            long temp = first + second;
+            first = second;
+            second = temp;
         }
-        return new long[]{0, 1, 1};
+        return new long[]{first, second, first == n / second ? 1L : 0L};
     }
 }
