@@ -7,6 +7,10 @@ public class PrimeDecomp {
         if (n == 1) {
             list.add(1);
         } else {
+            if (n % 2 == 0) {
+                list.add(2);
+                n = n / 2;
+            }
             list.add(n);
         }
         return list;
