@@ -33,4 +33,9 @@ public class PrimeDecompTest {
     public void should_return_2_2_given_4() throws Exception {
         assertThat(primeDecomp.factors(4), is(asList(2, 2)));
     }
+
+    @Test
+    public void should_return_2_3_given_6() throws Exception {
+        assertThat(primeDecomp.factors(6), is(asList(2, 3)));
+    }
 }
