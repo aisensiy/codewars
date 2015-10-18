@@ -22,6 +22,15 @@ public class PrimeDecompTest {
     @Test
     public void should_return_2_given_2() throws Exception {
         assertThat(primeDecomp.factors(2), is(asList(2)));
-
     }
+
+    @Test
+    public void should_return_3_given_3() throws Exception {
+        assertThat(primeDecomp.factors(3), is(asList(3)));
+    }
+
+    //    @Test
+//    public void should_return_2_2_given_4() throws Exception {
+//        assertThat(primeDecomp.factors(4), is(asList(2, 2)));
+//    }
 }

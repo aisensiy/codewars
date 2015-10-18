@@ -7,7 +7,7 @@ public class PrimeDecomp {
         if (n == 1) {
             list.add(1);
         } else {
-            list.add(2);
+            list.add(n);
         }
         return list;
     }
