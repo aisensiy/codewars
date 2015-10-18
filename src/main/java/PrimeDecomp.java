@@ -1,8 +1,13 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.TreeMap;
+import java.util.function.Function;
+
+import static java.util.function.UnaryOperator.identity;
+import static java.util.stream.Collectors.*;
 
 public class PrimeDecomp {
-    public List<Integer> factors(int n) {
+    public List<Integer> factorList(int n) {
         List<Integer> list = new ArrayList<Integer>();
         if (n <= 2) {
             list.add(n);
@@ -18,5 +23,11 @@ public class PrimeDecomp {
             }
         }
         return list;
+    }
+
+    public static String factors(int n) {
+        return new PrimeDecomp().factorList(n).stream().collect(
+                groupingBy(identity(), TreeMap::new, counting())
+        ).entrySet().stream().map(i -> "(" + i.getKey() + (i.getValue() > 1 ? "**" + i.getValue() : "") + ")").collect(joining());
     }
 }
