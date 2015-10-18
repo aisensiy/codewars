@@ -20,7 +20,8 @@ public class PrimeDecompTest {
     }
 
     @Test
-    public void shoul() throws Exception {
+    public void should_return_2_given_2() throws Exception {
+        assertThat(primeDecomp.factors(2), is(asList(2)));
 
     }
 }
